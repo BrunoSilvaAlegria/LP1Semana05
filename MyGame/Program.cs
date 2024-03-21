@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace MyGame
 {
@@ -28,6 +29,18 @@ namespace MyGame
                 health -= damageStillToInflict;
                 if (health < 0) health = 0;
             }
+        }
+        public void GetHealth()
+        {
+            
+        }
+        public void GetShield()
+        {
+            
+        }
+        public void SetName()
+        {
+            
         }
     }
 
