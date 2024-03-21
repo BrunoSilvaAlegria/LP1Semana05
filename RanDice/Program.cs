@@ -8,14 +8,22 @@ namespace RanDice
         {
             if (args.Length == 2)
             {
-                int n = args[0]; //Número de dados
-                int s = args[1]; //Seed
+                int n = int.Parse(args[0]); //Número de dados
+                int s = int.Parse(args[1]); //Seed
 
+                Random dados = new Random(s); //Seed s definida
                 
+                for (int i = 0; i < n; i++) //"Roda" todos os dados
+                {
+                    //Escolhe um número entre 1 e 6 para cada dado
+                    int nums = dados.Next(1,7);
+                    
+                }
+                    
             }
             else
             {
-                Console.WriteLine("This program only takes 2 arguments!");
+                Console.WriteLine("This program takes 2 arguments!");
             }
             
             
