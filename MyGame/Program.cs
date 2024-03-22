@@ -19,7 +19,10 @@ namespace MyGame
         
         static private int TotalPU; //Variável que conta quantos powerups todos
                                     //os inimigos apanharam durante o jogo
-        
+        static Enemy() //Inicializa a variável a 0
+        {
+            TotalPU = 0;
+        }
         
         public Enemy(string name)
         {
@@ -41,6 +44,7 @@ namespace MyGame
                 {
                     shield += vl; //Aumenta shield o valor dado (vl)
                 }
+                TotalPU += 1; //Incrementa o valor da var cada vez que é invocado
             }
             else
             {
