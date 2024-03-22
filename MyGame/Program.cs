@@ -122,9 +122,11 @@ namespace MyGame
                 name.PickupPowerUp(PowerUp.Health, 45);
                 name.PickupPowerUp(PowerUp.Shield, 2);
                 name.TakeDamage(69);
+                name.GetPickedPU();
                 
                 //Mostrar o nome, health e shield do inimigo
                 Console.WriteLine($"{name.GetName()}: {name.GetHealth()}H & {name.GetShield()}S");
+                Console.WriteLine($"{name.GetName()}: {name.GetPickedPU()}P.U");
             }
            
         }
