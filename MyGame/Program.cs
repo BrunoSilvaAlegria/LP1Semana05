@@ -33,27 +33,28 @@ namespace MyGame
         public float GetHealth() => health; //Devolve o valor de health
         public float GetShield() => shield; //Devolve o valor de shield
         
-        public void SetName(string nome)
+        public void SetName(string new_nome)
         {
-            if (name != null)
+            if (new_nome != null) //Confirma que a string é válida
             {
-                nome = ""; //String de armazenamento
+                name = ""; //String de armazenamento
                 
-                if (name.Length > 8)
+                if (new_nome.Length > 8)
                 //Deteta se o nome tem mais do que 8 caracteres e só corre se 
                 //tiver mais do que 8 caracteres
                 {
                     for (int i = 0; i < 8; i++)
                     //Garante que apenas se lê os primeiros 8 caracteres da string  
                     {
-                        nome += name[i]; //Guarda os 8 caracteres em 'nome'
+                        name += new_nome[i]; //Guarda os 8 caracteres em 'name'
                     }
                     return;
                 }
                 else
                 {
-                    GetName();
+                    name = new_nome;
                 }
+                return;
             }
             else Console.WriteLine("Can't be an empty name!");
             
