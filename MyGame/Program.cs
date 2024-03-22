@@ -18,7 +18,7 @@ namespace MyGame
         {
             SetName(name); //Programa usa este método para determinar o nome
             health = 100;
-            shield = 0;
+            shield = 70;
         }
 
         public void PickupPowerUp(PowerUp powerUp, float vl)
@@ -107,6 +107,10 @@ namespace MyGame
             for (int a = 0; a < enemies.Length; a++)
             {
                 Enemy name = new Enemy(enemies[a]); //Cria um novo inimigo
+
+                name.PickupPowerUp(PowerUp.Health, 45);
+                name.PickupPowerUp(PowerUp.Shield, 2);
+                name.TakeDamage(69);
                 
                 //Mostrar o nome, health e shield do inimigo
                 Console.WriteLine($"{name.GetName()}: {name.GetHealth()}H & {name.GetShield()}S");
