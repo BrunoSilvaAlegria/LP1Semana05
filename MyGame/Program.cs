@@ -10,7 +10,7 @@ namespace MyGame
         private float shield;
         public Enemy(string name)
         {
-            SetName(name);
+            SetName(name); //Programa usa este método para determinar o nome
             health = 100;
             shield = 0;
         }
@@ -66,7 +66,23 @@ namespace MyGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            int n = int.Parse(args[0]); //Nº de inimigos fornecido
+            string[] enemies = new string[n]; //Array com capacidade para o número de inimigos
+            int enems = 0; 
+            
+            for(int i = 0; i < enemies.Length; i++)
+            {
+                ++enems;//Para ir passando o número do inimigo
+                Console.Write($"What is the name of enemy {enems}?: ");
+                //Assegura que os nomes do inimigos são postos nas posições certas
+                enemies[i] = Console.ReadLine(); 
+            }
+
+            for (int a = 0; a < enemies.Length; a++) //
+            {
+                Enemy name = new Enemy(enemies[a]); //Cria um novo inimigo
+            }
+           
         }
     }
 }
