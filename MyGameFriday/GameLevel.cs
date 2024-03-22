@@ -24,8 +24,20 @@ namespace MyGameFriday
         public void SetEnemyInRoom(int room, Enemy enemy) 
         {
             //Coloca um inimigo específico na sala escolhida 
-            rooms[room] = enemy.GetName();
+            rms[room] = enemy.GetName();
             EnemNum++;
+        }
+        public void PrintEnemies()
+        {
+            for (int i = 0; i < rms.Length; i++) //Vai passando de sala em sala
+            {
+                if(!string.IsNullOrEmpty(rms[i])) //Garante que a sala é válida
+                {
+                    //Imprime que inimigo está em que sala
+                    Console.WriteLine($"Room {i}: {rms[i]}");
+                }
+                
+            }
         }
     }
 }
