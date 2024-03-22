@@ -24,7 +24,21 @@ namespace MyGame
         public void PickupPowerUp(PowerUp powerUp, float vl)
         //Método que aceita um dos elementos da enumeração PowerUp e um float
         {
-
+            if (vl <= 100) //Garante que o valor dado não ultrapassa 100
+            {
+                if (powerUp == PowerUp.Health)
+                {
+                    health += vl; //Aumenta health o valor dado (vl)
+                }
+                else if (powerUp == PowerUp.Shield)
+                {
+                    shield += vl; //Aumenta shield o valor dado (vl)
+                }
+            }
+            else
+            {
+                Console.WriteLine("Value can't be more than 100!");
+            }
         }
 
         public string GetName()
@@ -95,7 +109,7 @@ namespace MyGame
                 Enemy name = new Enemy(enemies[a]); //Cria um novo inimigo
                 
                 //Mostrar o nome, health e shield do inimigo
-                Console.WriteLine($"{name.GetName()}: {name.GetHealth()}H & {name.GetShield()}");
+                Console.WriteLine($"{name.GetName()}: {name.GetHealth()}H & {name.GetShield()}S");
             }
            
         }
