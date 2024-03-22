@@ -3,6 +3,12 @@ using System.Runtime.CompilerServices;
 
 namespace MyGame
 {
+    [Flags]
+    public enum PowerUp //Enumeração acessível a todas as classes
+    {
+        Health,
+        Shield
+    }
     public class Enemy
     {
         private string name;
@@ -13,6 +19,12 @@ namespace MyGame
             SetName(name); //Programa usa este método para determinar o nome
             health = 100;
             shield = 0;
+        }
+
+        public void PickupPowerUp(PowerUp powerUp, float vl)
+        //Método que aceita um dos elementos da enumeração PowerUp e um float
+        {
+
         }
 
         public string GetName()
@@ -81,6 +93,7 @@ namespace MyGame
             for (int a = 0; a < enemies.Length; a++)
             {
                 Enemy name = new Enemy(enemies[a]); //Cria um novo inimigo
+                
                 //Mostrar o nome, health e shield do inimigo
                 Console.WriteLine($"{name.GetName()}: {name.GetHealth()}H & {name.GetShield()}");
             }
