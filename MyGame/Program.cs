@@ -14,6 +14,13 @@ namespace MyGame
         private string name;
         private float health;
         private float shield;
+        
+         
+        
+        static private int TotalPU; //Variável que conta quantos powerups todos
+                                    //os inimigos apanharam durante o jogo
+        
+        
         public Enemy(string name)
         {
             SetName(name); //Programa usa este método para determinar o nome
@@ -58,7 +65,7 @@ namespace MyGame
         }
         public float GetHealth() => health; //Devolve o valor de health
         public float GetShield() => shield; //Devolve o valor de shield
-        
+        public float GetPickedPU() => TotalPU; //Devolve quantos powerups o inimigo tem 
         public void SetName(string new_nome)
         {
             if (new_nome != null) //Confirma que a string é válida
