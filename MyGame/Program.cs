@@ -78,9 +78,11 @@ namespace MyGame
                 enemies[i] = Console.ReadLine(); 
             }
 
-            for (int a = 0; a < enemies.Length; a++) //
+            for (int a = 0; a < enemies.Length; a++)
             {
                 Enemy name = new Enemy(enemies[a]); //Cria um novo inimigo
+                //Mostrar o nome, health e shield do inimigo
+                Console.WriteLine($"{name.GetName()}: {name.GetHealth()}H & {name.GetShield()}");
             }
            
         }
